@@ -16,7 +16,7 @@ export default async function (interaction) {
 
     let content = `Here are the results for '${query}':\n`;
     for (const coin of coins) {
-      content += `- ${coin.name} (${coin.symbol}) - 1 ${coin.symbol} = ${
+      content += `- ${coin.name}, id : ${coin.id}, (${coin.symbol}) - 1 ${coin.symbol} = ${
         coinPrices[coin.id].usd
       } USD\n`;
     }

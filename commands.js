@@ -12,6 +12,12 @@ export const commands = [
             .setName('crypto')
             .setDescription('The currency to fetch for.')
             .setRequired(true)
+        ))
+        .addStringOption(option => (
+            option
+            .setName('fiat')
+            .setDescription('The currency unit to convert to.')
+            .setRequired(true)
         )),
     new SlashCommandBuilder()
         .setName('graph')
@@ -41,6 +47,6 @@ export const commands = [
 
 export const functions = {
     'gecko': geckoFunction,
-    'getcode': getCodeFunction
+    'getcode': getCodeFunction,
     'graph': graphFunction
 }
