@@ -1,6 +1,7 @@
 import { SlashCommandBuilder } from '@discordjs/builders'
 import geckoFunction from './commands/gecko.js'
 import getCodeFunction from './commands/getCode.js'
+import graphFunction from './commands/graph.js'
 
 export const commands = [
     new SlashCommandBuilder()
@@ -9,6 +10,15 @@ export const commands = [
         .addStringOption(option => (
             option
             .setName('crypto')
+            .setDescription('The currency to fetch for.')
+            .setRequired(true)
+        )),
+    new SlashCommandBuilder()
+        .setName('graph')
+        .setDescription('Display a community-driven currency graph')
+        .addStringOption(option => (
+            option
+            .setName('currency')
             .setDescription('The currency to fetch for.')
             .setRequired(true)
         ))
@@ -32,4 +42,5 @@ export const commands = [
 export const functions = {
     'gecko': geckoFunction,
     'getcode': getCodeFunction
+    'graph': graphFunction
 }

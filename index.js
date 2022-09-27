@@ -54,6 +54,7 @@ async function setup() {
             try {
                 await functions[name](interaction)
             } catch ( err ) {
+                console.log(err)
                 await interaction.reply({
                     content: 'The bot ran into and issue.'
                 })
